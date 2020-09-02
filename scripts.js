@@ -8,12 +8,11 @@ var msg = "Detta är en global variabel";
 
 // self invoked anonymous function
 (function () {
-
-  var text = document.createElement('DIV');
+  var text1 = document.createElement("DIV");
   //hämtar global variabel
-  text.innerText= msg;
+  text1.innerText = msg;
 
-document.body.appendChild(text);
+  document.body.appendChild(text1);
 
   document.getElementById("msgbox").addEventListener(
     "submit",
@@ -27,7 +26,7 @@ document.body.appendChild(text);
       // Custom events
       let event = new CustomEvent("newMessage", {
         detail: {
-          message: "Hello Daniel!",
+          message: "Hej Daniel!",
           time: new Date(),
         },
       });
@@ -46,9 +45,13 @@ document.body.appendChild(text);
 
   // newMessage event handler
   function hiddenMessage(e) {
-    console.log(e.detail.message);
+    var text2 = document.createElement("DIV");
+    text2.innerText = e.detail.message;
+    document.body.appendChild(text2);
   }
   function timeTell(e) {
-    console.log(e.detail.time);
+    var text3 = document.createElement("DIV");
+    text3.innerText = "Tiden är nu: " + e.detail.time;
+    document.body.appendChild(text3);
   }
 })(); // end of self invoked anonymous function
