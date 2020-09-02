@@ -4,19 +4,21 @@ Author: Pellelito
 ****************************************/
 
 //global variables
-const string = "Detta är en global variabel";
+var msg = "Detta är en global variabel";
 
 // self invoked anonymous function
 (function () {
 
   var text = document.createElement('DIV');
   //hämtar global variabel
-  text.innerText= string;
+  text.innerText= msg;
+
+document.body.appendChild(text);
 
   document.getElementById("msgbox").addEventListener(
     "submit",
     function () {
-      var msg = document.querySelector("#msg").value.trim();
+      msg = document.querySelector("#msg").value.trim();
 
       // Assignment with &&
       msg && alert("Du skrev; " + msg);
