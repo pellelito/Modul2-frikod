@@ -1,0 +1,11 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+	font-family: Calibri, sans-serif;
+	font-weight: normal;
+}
+body{
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(to right , blue,lightgreen);
+
+}
